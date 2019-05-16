@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Push项目列表</title>
+</head>
+<body>
+	<div id="app">
+		<ol>
+			<li v-for="list in lists">{{list.name}}</li>
+		</ol>
+	</div>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
+	<script>
+	  let view = new Vue({
+			el:'#app',
+			data:{
+				lists:[
+					{name:'Tom'},
+					{name:'Tony'}
+				]
+			},
+			methods:{
+			}
+		})
+		view.lists.push({name:'WineWang'},{name:'xxx'})
+	</script>
+</body>
+</html>
