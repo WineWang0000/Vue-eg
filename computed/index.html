@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>computed</title>
+</head>
+<body>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+  <div id="app">
+    <p>{{message}}</p>
+    <p>{{messageReverse}}</p>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'HELLO'
+      },
+      computed:{
+        messageReverse(){
+          return this.message.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
