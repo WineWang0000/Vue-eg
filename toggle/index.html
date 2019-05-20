@@ -10,17 +10,19 @@
 			position: absolute;
 			margin: 30px 0;
 		}
-		/* .fade-enter-active, .fade-leave-active {
+		.fade-enter-active, .fade-leave-active {
 			transition: opacity .5s;
 		}
 		.fade-enter, .fade-leave-to{
 			opacity: 0;
-		} */
+		}
 	</style>
 </head>
 <body>
 	<div id="app">
-		<p v-if="show">show</p>
+		<transition name="fade">
+			<p v-if="show">show</p>
+		</transition>
 		<button @click="show = !show">Toggle</button>
 	</div>
 	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
