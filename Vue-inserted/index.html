@@ -14,24 +14,29 @@
 </head>
 <body>
 	<div id="app">
-		<div v-click-outside></div>
+		<div v-click-outside="close"></div>
 	</div>
 	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
 	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
 	<script>
 	  new Vue({
-			el: '#app'
+			el: '#app',
+			methods:{
+				close(){
+					console.log('close')
+				}
+			}
 		})
 
 		Vue.directive('click-outside', {
-			inserted: function(el){
+			inserted: function(el,binding, vNode){
 			  document.addEventListener('click', (e)=>{
 				  let {target} = e
 				  if(target === el || el.contains(target)){
 					  console.log('in')
 					  return
 				  }
-			      console.log('out')
+			      binding.value()
 			  })
       }
     })
