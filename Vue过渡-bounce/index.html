@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	  .bounce-enter-active{
+			animation: bounce-in 2s;
+		}
+		.bounce-leave-active{
+			animation: bounce-in 4s reverse;
+		}
+		@keyframes bounce-in{
+			0%{
+				transform: scale(0);
+			}
+			50%{
+				transition: scale(1.5);
+			}
+			100%{
+				transition: scale(1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click="visible = !visible">按钮</button>
+		<transition name="bounce">
+			<p v-if="visible">古诗文网作为传承经典的网站成立于2011年。古诗文网专注于古诗文服务,致力于让古诗文爱好者更便捷地发表及获取古诗文相关资料。</p>
+		</transition>
+	</div>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
+	<script>
+	  new Vue({
+			el: '#app',
+			data:{
+				visible: false
+			}
+		})
+	</script>
+</body>
+</html>
