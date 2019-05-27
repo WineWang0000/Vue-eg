@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue过渡-velocity</title>
+</head>
+<style>
+	p{
+		border: 1px solid;
+	}
+</style>
+<body>
+	<div id="app">
+		<button @click="visible = !visible">toggle</button>
+		<transition
+			v-on:brfore-enter="beforeEnter"  
+			v-on:enter="enter"
+			v-on:leave="leave"
+			>
+			<p v-if="visible">Demo</p>
+		</transition>
+	</div>
+	<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.common.dev.js"></script>
+	<script src="https://cdn.bootcss.com/velocity/1.2.3/velocity.js"></script>
+	<script>
+	  new Vue({
+			el: '#app',
+			data:{
+				visible: false
+			},
+			methods:{
+				beforeEnter: function(el){
+				el.style.opacity = 0
+				el.style.transformOrigin = 'left'
+			},
+			enter: function(el){
+				Velocity(el, {opacity: 1,fontSize: '1.4em'}, {duration: 3000})
+			},
+			leave: function(el){
+				Velocity(el,{opacity: 0.5,fontSize: '1em'})  
+			}
+		  }
+		})
+	</script>
+</body>
+</html>
