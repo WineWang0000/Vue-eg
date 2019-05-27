@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue动画-toggle</title>
+</head>
+<body>
+	<div id="app">
+		<button v-if="status === 'off'" @click="status = 'on'">爱我</button>
+		<button v-else @click="status = 'off'">爱他</button>
+		<h3>呵，我只爱自己！</h3>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+	<script>
+	  new Vue({
+			el: '#app',
+			data:{
+				status: 'on'
+			}
+		})
+	</script>
+</body>
+</html>
