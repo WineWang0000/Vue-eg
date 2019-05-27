@@ -25,3 +25,5 @@ vNode：虚拟节点。
 - Vue动画多元素
 &ensp;别忘记加key="xxx"：
 &ensp;&ensp;开始Vue只会认为你要变的是button里面的内容，加上可以，才知道把两个button切换。
+- mode="out-in":
+爱我button先消失，爱他button再显现。见Vue动画-toggle文件夹。
