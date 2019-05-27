@@ -20,3 +20,5 @@ vNode：虚拟节点。
  &ensp;v-leave-active：定义离开过渡生效时的状态。
  &ensp;v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。
  **不明白的参考例子**
+ - Vue过渡-velocity：
+ 如果部分不成，可能是velocity版本问题，换成1.2.3试试 。
