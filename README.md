@@ -22,3 +22,6 @@ vNode：虚拟节点。
  **不明白的参考例子**
  - Vue过渡-velocity：
  如果部分不成，可能是velocity版本问题，换成1.2.3试试 。
+- Vue动画多元素
+&ensp;别忘记加key="xxx"：
+&ensp;&ensp;开始Vue只会认为你要变的是button里面的内容，加上可以，才知道把两个button切换。
