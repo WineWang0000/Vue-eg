@@ -5,11 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Vue动画-toggle</title>
+	<style>
+	  .fade-enter-active,
+		.fade-leave-active{
+			transition: all 2s;
+		}
+		.fade-enter{
+			opacity: 0;
+		}
+		.fade-leave-to{
+			opacity: 0.5;
+		}
+	</style>
 </head>
 <body>
 	<div id="app">
-		<button v-if="status === 'off'" @click="status = 'on'">爱我</button>
-		<button v-else @click="status = 'off'">爱他</button>
+		<transition name="fade">
+			<button 
+				key="on" 
+				v-if="status === 'off'" 
+				@click="status = 'on'">爱我</button>
+			<button 
+				key="off" 
+				v-else 
+				@click="status = 'off'">爱他</button>
+		</transition>
 		<h3>呵，我只爱自己！</h3>
 	</div>
 	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
